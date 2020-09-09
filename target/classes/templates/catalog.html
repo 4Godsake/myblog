@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>分类</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="../static/myStyle.css"  th:href="@{myStyle.css}">
+</head>
+<body>
+<!--导航栏-->
+    <nav class="ui inverted attached segment my-nav-padding my-nav-opacity my-top-fixed">
+      <div class="ui inverted secondary stackable menu">
+        <div class="ui inverted container">
+          <h2 class="ui header item teal inverted animate__animated animate__bounceInLeft">RapDog</h2>
+          <a class="item"><i class="home icon"></i>首页</a>
+          <a class="item active"><i class="idea icon "></i>分类</a>
+          <a class="item"><i class="tags icon"></i>标签</a>
+          <a class="item"><i class="book icon"></i>留言板</a>
+          <a class="item"><i class="info icon"></i>关于我</a>
+          <div class="ui right aligned item">
+            <div class="ui transparent inverted icon input">
+              <i class="search icon link"></i>
+              <input type="text" placeholder="Search" style="width:15em;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+<!--内容-->
+    <div class="my-content-padding">
+      <div class="ui container my-opacity-90">
+        <!-- 分类栏 -->
+        <div class="ui stackable segment my-padding-tb-2em">
+          <div class="ui labeled button">
+            <a href="" class="ui basic teal button">测试分类</a>
+            <div class="ui basic teal left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+          <div class="ui labeled button my-margin-tb-03em">
+            <a href="" class="ui basic button">测试分类</a>
+            <div class="ui basic left pointing label">14</div>
+          </div>
+
+        </div>
+        <!-- 博客列表 -->
+        <div class="ui top attached stackable secondary segment">
+
+          <div class="ui vertical segment my-padding-1em my-padding-tb-2em">
+            <div class="ui stackable grid">
+              <div class="twelve wide column">
+                <h3 class="ui header">这是一篇样例博客</h3>
+                <p>Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
+                <!-- 博客发布者以及时间 -->
+                <div class="ui right floated grid">
+                  <div class="eleven wide column">
+                    <div class="ui horizontal link list">
+                      <!-- 头像 -->
+                      <div class="item">
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                        <!-- 图片后面加文字等用content -->
+                        <div class="content">
+                          <a href="#" class="header">RapDog</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <i class="calendar icon"></i> 2020-08-22
+                      </div>
+                      <div class="item">
+                        <i class="eye icon"></i>2321
+                      </div>
+                      <div class="item">
+                        <i class="comment icon"></i> 0
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right aligned five wide column">
+                    <a href="#" target="_blank" class="ui label basic teal my-label-size-min my-text-thin">样例标签</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="four wide column">
+                <a href="#" target="_blank">
+                  <img src="https://picsum.photos/id/1/230/130" alt="" class="ui rounded image">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="ui vertical segment my-padding-1em my-padding-tb-2em">
+            <div class="ui stackable grid">
+              <div class="twelve wide column">
+                <h3 class="ui header">这是一篇样例博客</h3>
+                <p>Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
+                <!-- 博客发布者以及时间 -->
+                <div class="ui right floated grid">
+                  <div class="eleven wide column">
+                    <div class="ui horizontal link list">
+                      <!-- 头像 -->
+                      <div class="item">
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                        <!-- 图片后面加文字等用content -->
+                        <div class="content">
+                          <a href="#" class="header">RapDog</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <i class="calendar icon"></i> 2020-08-22
+                      </div>
+                      <div class="item">
+                        <i class="eye icon"></i>2321
+                      </div>
+                      <div class="item">
+                        <i class="comment icon"></i> 0
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right aligned five wide column">
+                    <a href="#" target="_blank" class="ui label basic teal my-label-size-min my-text-thin">样例标签</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="four wide column">
+                <a href="#" target="_blank">
+                  <img src="https://picsum.photos/id/1/230/130" alt="" class="ui rounded image">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="ui vertical segment my-padding-1em my-padding-tb-2em">
+            <div class="ui stackable grid">
+              <div class="twelve wide column">
+                <h3 class="ui header">这是一篇样例博客</h3>
+                <p>Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
+                <!-- 博客发布者以及时间 -->
+                <div class="ui right floated grid">
+                  <div class="eleven wide column">
+                    <div class="ui horizontal link list">
+                      <!-- 头像 -->
+                      <div class="item">
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                        <!-- 图片后面加文字等用content -->
+                        <div class="content">
+                          <a href="#" class="header">RapDog</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <i class="calendar icon"></i> 2020-08-22
+                      </div>
+                      <div class="item">
+                        <i class="eye icon"></i>2321
+                      </div>
+                      <div class="item">
+                        <i class="comment icon"></i> 0
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right aligned five wide column">
+                    <a href="#" target="_blank" class="ui label basic teal my-label-size-min my-text-thin">样例标签</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="four wide column">
+                <a href="#" target="_blank">
+                  <img src="https://picsum.photos/id/1/230/130" alt="" class="ui rounded image">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="ui vertical segment my-padding-1em my-padding-tb-2em">
+            <div class="ui stackable grid">
+              <div class="twelve wide column">
+                <h3 class="ui header">这是一篇样例博客</h3>
+                <p>Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
+                <!-- 博客发布者以及时间 -->
+                <div class="ui right floated grid">
+                  <div class="eleven wide column">
+                    <div class="ui horizontal link list">
+                      <!-- 头像 -->
+                      <div class="item">
+                        <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                        <!-- 图片后面加文字等用content -->
+                        <div class="content">
+                          <a href="#" class="header">RapDog</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <i class="calendar icon"></i> 2020-08-22
+                      </div>
+                      <div class="item">
+                        <i class="eye icon"></i>2321
+                      </div>
+                      <div class="item">
+                        <i class="comment icon"></i> 0
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right aligned five wide column">
+                    <a href="#" target="_blank" class="ui label basic teal my-label-size-min my-text-thin">样例标签</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="four wide column">
+                <a href="#" target="_blank">
+                  <img src="https://picsum.photos/id/1/230/130" alt="" class="ui rounded image">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 上下页 -->
+        <div class="ui bottom attached segment">
+          <div class="ui middle aligned two column grid">
+            <div class="column">
+              <a href="#" class="ui teal button">上一页</a>
+            </div>
+            <div class="column right aligned">
+              <a href="#" class="ui teal button">下一页</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+<!--底部-->
+    <footer>
+        <div class="ui inverted vertical footer segment my-footer-tb-padding center aligned my-nav-opacity">
+            <div class="ui container">
+              <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="four wide column center aligned">
+                  <h4 class="ui inverted header">微信</h4>
+                  <div class="ui inverted link list">
+                        <img src="../static/img/qcode.png" class="ui rounded image centered" alt="" style="width: 10em;" th:src="@{/img/qcode.png}">
+                  </div>
+                </div>
+                <div class="four wide column">
+                  <h4 class="ui inverted header center aligned">联系我</h4>
+                  <div class="ui inverted link list">
+                    <br>
+                    <a href="#" class="item">QQ：1025744898</a>
+                    <a href="#" class="item">邮箱1025744898@qq.com</a>
+                  </div>
+                </div>
+                <div class="eight wide column">
+                  <h4 class="ui inverted header">RapDog</h4>
+                  <br>
+                  <p class="my-text-opacity my-text-fontweight">这是RapDog的个人博客,以下都是为了美观乱打的爱好地方哈搜if罕见的司法很骄傲搜房卡华为of华为hi发个号冬奥会烦得很法鸡啊</p>
+                </div>
+              </div>
+            </div>
+            <!-- copyright -->
+            <div class="ui inverted section divider">
+            </div>
+            <p class="ui inverted center aligned my-text-fontweight my-text-opacity"> Copyright © 2020 RapDog. All rights reserved. </p>
+          </div>
+    </footer>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</body>
+</html>
