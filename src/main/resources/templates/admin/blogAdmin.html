@@ -56,28 +56,19 @@
             </a>
           </div>
           <!-- 发布博客 -->
-          <div class="ui tab active my-z-top" data-tab="fabu">
+          <div class="ui tab active" data-tab="fabu">
             <form action="#" method="POST" class="ui form my-margin-top-1em">
               <!-- 博客标题以及是否原创 -->
               <div class="field">
-                <div class="ui left labeled input">
-                  <div class="ui selection teal basic compact dropdown label">
-                    <input type="hidden" value="原创">
-                    <i class="dropdown icon"></i>
-                    <div class="text">原创</div>
-                    <div class="menu">
-                      <div class="item" data-value="原创">原创</div>
-                      <div class="item" data-value="转载">转载</div>
-                      <div class="item" data-value="翻译">翻译</div>
-                    </div>
+                  <div class="ui left labeled input">
+                      <label class="ui teal basic label">标题</label>
+                      <input type="text" name="title" id="title" placeholder="请输入标题">
                   </div>
-                  <input type="text" name="title" placeholder="标题">
-                </div>
               </div>
               <!-- 博客内容 -->
               <div class="field">
                 <div id="md-content" style="z-index: 1000000 !important;">
-                  <textarea name="content" style="display: none;">[TOC]
+                  <textarea name="content" id="content" style="display: none;">[TOC]
 
 #### Disabled options
 
@@ -98,14 +89,13 @@
             images/
             plugins/
             examples/
-            languages/     
+            languages/
             editormd.js
             ...
 
 ```html
 &lt;!-- English --&gt;
 &lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
-
 &lt;!-- 繁體中文 --&gt;
 &lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
 ```
@@ -113,13 +103,29 @@
                 </div>
               </div>
               <!-- 博客分类 -->
-              <div class="two fields">
+              <div class="three fields">
+                  <!--原创flag-->
+                  <div class="field">
+                      <div class="ui left labeled action input">
+                          <label class="ui compact teal basic label">原创与否</label>
+                          <div class="ui fluid selection dropdown">
+                              <input type="hidden" name="tag">
+                              <i class="dropdown icon"></i>
+                              <div class="default text">原创</div>
+                              <div class="menu">
+                                  <div class="item" data-value="原创">原创</div>
+                                  <div class="item" data-value="转载">转载</div>
+                                  <div class="item" data-value="翻译">翻译</div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                 <!-- 分类 -->
                 <div class="field">
                   <div class="ui left labeled action input">
                     <label class="ui compact teal basic label">分类</label>
                     <div class="ui fluid selection dropdown">
-                      <input type="hidden" name="catalog">
+                      <input type="hidden" name="catalog.id" id="catalog.id">
                       <i class="dropdown icon"></i>
                       <div class="default text">分类</div>
                       <div class="menu">
@@ -136,7 +142,7 @@
                   <div class="ui left labeled action input">
                     <label class="ui compact teal basic label">标签</label>
                     <div class="ui fluid multiple search selection dropdown">
-                      <input type="hidden" name="tag">
+                      <input type="hidden" name="tag" name="tag.id" id="tag.id">
                       <i class="dropdown icon"></i>
                       <div class="default text">标签</div>
                       <div class="menu">
@@ -148,12 +154,13 @@
                     </div>
                   </div>
                 </div>
+
               </div>
               <!-- 图片引用地址 -->
               <div class="field">
                 <div class="ui left labeled input">
                   <label class="ui teal basic label">图片</label>
-                  <input type="text" name="picture" placeholder="图片引用地址">
+                  <input type="text" name="picture" id="picture" placeholder="图片引用地址">
                 </div>
               </div>
               <!-- 发布选项 -->
@@ -161,25 +168,25 @@
                 <div class="three wide column">
                   <div class="ui toggle checkbox">
                     <input type="checkbox" id="recommend" name="recommend" class="hidden">
-                    <label for="recommend">推荐</label>
+                    <label for="recommend">开启推荐</label>
                   </div>
                 </div>
                 <div class="three wide column">
                   <div class="ui toggle checkbox my-padding-right-1em">
                     <input type="checkbox" id="original" name="original" class="hidden">
-                    <label for="original">原创</label>
+                    <label for="original">开启原创</label>
                   </div>
                 </div>
                 <div class="three wide column">
                   <div class="ui toggle checkbox my-padding-right-1em">
                     <input type="checkbox" id="reward" name="reward" class="hidden">
-                    <label for="reward">赞赏</label>
+                    <label for="reward">开启赞赏</label>
                   </div>
                 </div>
                 <div class="three wide column">
                   <div class="ui toggle checkbox my-padding-right-1em">
                     <input type="checkbox" id="comment" name="comment" class="hidden">
-                    <label for="comment">评论</label>
+                    <label for="comment">开启评论</label>
                   </div>
                 </div>
               </div>

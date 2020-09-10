@@ -20,6 +20,7 @@ public class blog {
     private Boolean copyright;//版权、转载声明
     private Boolean comment;
     private Boolean recommend;
+    private Boolean publish;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
     @Temporal(TemporalType.TIMESTAMP)
