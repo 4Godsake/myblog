@@ -119,6 +119,14 @@ public class blog {
         this.recommend = recommend;
     }
 
+    public Boolean getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -180,8 +188,13 @@ public class blog {
                 ", copyright=" + copyright +
                 ", comment=" + comment +
                 ", recommend=" + recommend +
+                ", publish=" + publish +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
+                ", catalog=" + catalog +
+                ", tags=" + tags +
+                ", user=" + user +
+                ", comments=" + comments +
                 '}';
     }
 }

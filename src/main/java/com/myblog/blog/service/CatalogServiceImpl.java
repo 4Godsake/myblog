@@ -43,6 +43,7 @@ public class CatalogServiceImpl implements CatalogService{
         return catalogRepository.findAll(pageable);
     }
 
+    @Transactional
     @Override
     public List<catalog> listCatalog() {
         return catalogRepository.findAll();

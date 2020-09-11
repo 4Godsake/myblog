@@ -27,11 +27,14 @@ public class AdminController {
     private BlogService blogService;
     @Autowired
     private CatalogService catalogService;
+    @Autowired
+    private TagService tagService;
 
     @GetMapping("/blogAdmin")
     public String blogAdmin(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)
                                         Pageable pageable, Model model){
         model.addAttribute("catalogs", catalogService.listCatalog());
+        model.addAttribute("tags", tagService.listTag());
         model.addAttribute("page", blogService.listBlog(pageable));
         System.out.println("--------blogAdmin----------");
         return "admin/blogAdmin";
