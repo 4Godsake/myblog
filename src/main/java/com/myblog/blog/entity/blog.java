@@ -1,5 +1,6 @@
 package com.myblog.blog.entity;
 
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +13,9 @@ public class blog {
     @GeneratedValue
     private Long id;
     private String title;
+
+    @Basic(fetch = FetchType.LAZY)
+    @Lob
     private String content;
     private String picture;
     private String flag;//原创与否
@@ -35,6 +39,8 @@ public class blog {
     @OneToMany(mappedBy = "blog")
     private List<comment> comments = new ArrayList<>();
 
+    @Transient
+    private String tagIds;
 
     public blog() {
     }
@@ -175,6 +181,14 @@ public class blog {
         this.comments = comments;
     }
 
+    public String getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(String tagIds) {
+        this.tagIds = tagIds;
+    }
+
     @Override
     public String toString() {
         return "blog{" +
@@ -195,6 +209,7 @@ public class blog {
                 ", tags=" + tags +
                 ", user=" + user +
                 ", comments=" + comments +
+                ", tagIds='" + tagIds + '\'' +
                 '}';
     }
 }

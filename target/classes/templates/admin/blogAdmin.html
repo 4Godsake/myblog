@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>博客管理</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="../../static/myStyle.css" th:href="@{../myStyle.css}">
+    <link rel="stylesheet" href="../../static/myStyle.css" th:href="@{/myStyle.css}">
     <link rel="stylesheet" href="../../static/lib/editor/css/editormd.min.css" th:href="@{/lib/editor/css/editormd.min.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 <!--    <style type="text/css">-->
@@ -56,7 +56,7 @@
             </a>
           </div>
           <!-- 发布博客 -->
-          <div class="ui tab active" data-tab="fabu">
+          <div class="ui tab active" data-tab="fabu" th:class="${flag}? 'ui tab':'ui tab active'">
             <form th:action="@{/admin/blogAdmin/blogsave}" method="POST" class="ui form my-margin-top-1em" id="blog-form">
                 <input type="hidden" name="publish">
               <!-- 博客标题以及是否原创 -->
@@ -99,8 +99,7 @@
 &lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
 &lt;!-- 繁體中文 --&gt;
 &lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
-```
-                  </textarea>
+```</textarea>
                 </div>
               </div>
               <!-- 博客分类 -->
@@ -130,7 +129,7 @@
                       <i class="dropdown icon"></i>
                       <div class="default text">分类</div>
                       <div class="menu">
-                        <div class="item" data-value="test1">测试分类1</div>
+<!--                        <div class="item" data-value="test1">测试分类1</div>-->
                           <div th:each="catalog : ${catalogs}" class="item" data-value="1" th:data-value="${catalog.id}" th:text="${catalog.name}">分类1</div>
                       </div>
                     </div>
@@ -187,7 +186,7 @@
                 </div>
               </div>
               <!-- 底部按钮 -->
-              <div class="ui right aligned container">
+              <div class="ui right aligned container" style="width: 100% !important;">
                   <button type="button" id="save-btn" class="ui button">保存</button>
                   <button type="button" id="publish-btn" class="ui teal button">发布</button>
                   <div class="ui mini error message">表单验证信息</div>
@@ -195,7 +194,7 @@
             </form>
           </div>
           <!-- 博客列表 -->
-          <div class="ui tab" data-tab="liebiao">
+          <div class="ui tab" data-tab="liebiao" th:class="${flag}? 'ui tab active':'ui tab'">
             <form class="ui segment top attached form my-margin-top-1em">
                 <input type="hidden" name="page">
               <div class="inline fields">
@@ -229,6 +228,17 @@
                 </div>
               </div>
             </form>
+              <!--操作结果-->
+              <div class="ui success message" th:unless="${#strings.isEmpty(messageSuccess)}">
+                  <i class="close icon" id="close"></i>
+                  <div class="header">提示：</div>
+                  <p th:text="${messageSuccess}">操作成功???</p>
+              </div>
+              <div class="ui error message" th:unless="${#strings.isEmpty(messageError)}">
+                  <i class="close icon" id="close"></i>
+                  <div class="header">提示：</div>
+                  <p th:text="${messageError}">操作失败???</p>
+              </div>
               <div id="table-container">
                   <table th:fragment="blogList" class="ui bottom attached celled table">
                       <thead>
@@ -237,6 +247,7 @@
                           <th>标题</th>
                           <th>类型</th>
                           <th>推荐</th>
+                          <th>状态</th>
                           <th>更新时间</th>
                           <th>操作</th>
                       </tr>
@@ -247,6 +258,7 @@
                           <td th:text="${blog.title}">测试博客标题</td>
                           <td th:text="${blog.catalog.name}">test</td>
                           <td th:text="${blog.recommend} ? '是':'否'">是</td>
+                          <td th:text="${blog.publish} ? '发布':'草稿'">发布</td>
                           <td th:text="${blog.updateTime}">2020-8-27 00:23:36</td>
                           <td>
                               <a href="#" th:name="${blog.title}" th:id="${blog.id}" class="ui mini teal button my-popup">编辑</a>
@@ -256,7 +268,7 @@
                       </tbody>
                       <tfoot>
                       <tr>
-                          <th colspan="6" th:if="${page.totalPages}>1">
+                          <th colspan="7" th:if="${page.totalPages}>1">
                               <div class="ui right floated pagination menu">
                                   <a onclick="page(this)" th:attr="data-page=${page.number}-1"  th:unless="${page.first}" class="icon item">
                                       <i class="teal left chevron icon"></i>
@@ -322,11 +334,20 @@
       });
       $('.tabular.menu .item').tab();
       $('.ui.checkbox').checkbox();
+
+      $('#close')
+          .on('click',function () {
+              $(this)
+                  .closest('.message')
+                  .transition('fade');
+          });
+
       function page(obj) {
         $("[name='page']").val($(obj).data("page"));
         loadData();
       }
       $("#search-btn").click(function () {
+          $("[name='page']").val(0);
           loadData();
       })
       function loadData() {
@@ -390,7 +411,7 @@
                     width   : "100%",
                     height  : 640,
                     syncScrolling : "single",
-                    path    : "../lib/editor/lib/"
+                    path    : "/lib/editor/lib/"
                 });
                 
                 /*
