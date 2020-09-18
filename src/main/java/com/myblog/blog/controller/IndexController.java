@@ -1,7 +1,9 @@
 package com.myblog.blog.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class IndexController {
@@ -13,8 +15,8 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/blog")
-    public String blogInfo(){
+    @GetMapping("/blog/{id}")
+    public String blogInfo(@PathVariable Long id, Model model){
 
         System.out.println("--------blogInfo----------");
         return "blogInfo";

@@ -50,16 +50,17 @@ public class TagServiceImpl implements TagService{
 
     @Transactional
     @Override
-    public List<tag> listTag(String ids) {
+    public List<tag> listTags(String ids) {
         return tagRepository.findAllById(stringToList(ids));
     }
 
     private List<Long> stringToList(String ids) {
         List<Long> list = new ArrayList<>();
-        if("".equals(ids) && ids != null){
+        if(!"".equals(ids) && ids != null){
             String[] idArray = ids.split(",");
+            System.out.println(idArray+"fuck==========================================");
             for (int i=0; i < idArray.length; i++){
-                list.add(Long.valueOf(idArray[i]));
+                list.add(new Long(idArray[i]));
             }
         }
         return list;

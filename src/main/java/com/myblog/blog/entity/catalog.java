@@ -9,7 +9,7 @@ import java.util.List;
 public class catalog {
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     private String name;
 
     @OneToMany(mappedBy = "catalog")
@@ -19,7 +19,7 @@ public class catalog {
     public catalog() {
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

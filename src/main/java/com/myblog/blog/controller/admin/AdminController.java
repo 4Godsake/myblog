@@ -35,6 +35,7 @@ public class AdminController {
         model.addAttribute("catalogs", catalogService.listCatalog());
         model.addAttribute("tags", tagService.listTag());
         model.addAttribute("page", blogService.listBlog(pageable));
+        model.addAttribute("blog", new blog());
         System.out.println("--------blogAdmin----------");
         return "admin/blogAdmin";
     }
@@ -45,8 +46,24 @@ public class AdminController {
         model.addAttribute("catalogs", catalogService.listCatalog());
         model.addAttribute("tags", tagService.listTag());
         model.addAttribute("page", blogService.listBlog(pageable));
-        System.out.println("--------blogEdit----------");
+        blog blog = blogService.getBlog(id);
+        blog.init();
+        model.addAttribute("blog", blog);
+        model.addAttribute("fuck",blogService.getBlog(id).getCatalog().getId());
+        // fffffffffffffffffffffffffuuuuuuuuuuuuuuuuuuuuuuuuuuuuucccccccccccccccccccccccccckkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+        System.out.println("--------blogEdit----------"+id);
         return "admin/blogAdmin";
+    }
+
+    @GetMapping("/blogAdmin/{id}/delete")
+    public String blogDelete(@PathVariable Long id, RedirectAttributes attributes, HttpSession session){
+        blog blog = blogService.getBlog(id);
+        String blogTitle = blog.getTitle();
+        blogService.deleteBlog(id);
+        attributes.addFlashAttribute("messageError","博客《"+blogTitle+"》"+"删除成功！");
+        attributes.addFlashAttribute("flag",true);//redirect后在列表页面
+        System.out.println("--------blogEdit----------"+id);
+        return "redirect:/admin/blogAdmin";
     }
 
     @PostMapping("/blogAdmin/search")
@@ -61,7 +78,7 @@ public class AdminController {
     public String blogPost(blog blog, RedirectAttributes attributes, HttpSession session){
         blog.setUser((user) session.getAttribute("user"));
         blog.setCatalog(catalogService.getCatalog(blog.getCatalog().getId()));
-        blog.setTags(tagService.listTag(blog.getTagIds()));
+        blog.setTags(tagService.listTags(blog.getTagIds()));
         blog blog1 =blogService.saveBlog(blog);
         if(blog1 == null){
             attributes.addFlashAttribute("messageError","发布失败");

@@ -26,10 +26,16 @@ public class BlogServiceImpl implements BlogService{
     @Autowired
     private BlogRepository blogRepository;
 
+//    @Transactional
+//    @Override
+//    public blog getBlog(String name) {
+//        return blogRepository.findByTitle(name);
+//    }
+
     @Transactional
     @Override
-    public blog getBlog(String name) {
-        return blogRepository.findByTitle(name);
+    public blog getBlog(Long id) {
+        return blogRepository.findById(id).get();
     }
 
     @Transactional
@@ -62,9 +68,18 @@ public class BlogServiceImpl implements BlogService{
     @Transactional
     @Override
     public blog saveBlog(blog blog) {
-        blog.setCreateTime(new Date());
-        blog.setUpdateTime(new Date());
-        blog.setViews(0);
+        System.out.println(blog.getTagIds()+"-------------标签");
+        System.out.println(blog.getTags()+"-------------标签2");
+        System.out.println(blog.getTitle()+"-------------标签");
+        System.out.println(blog.getCatalog()+"-------------标签");
+        if (blog.getId() == null){
+            blog.setCreateTime(new Date());
+            blog.setUpdateTime(new Date());
+            blog.setViews(0);
+        }else {
+            blog.setUpdateTime(new Date());
+        }
+
         return blogRepository.save(blog);
     }
 

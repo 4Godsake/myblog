@@ -1,6 +1,8 @@
 package com.myblog.blog.entity;
 
 
+import org.junit.Test;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,10 +22,10 @@ public class blog {
     private String picture;
     private String flag;//原创与否
     private Integer views;
-    private Boolean reward;
+    private Boolean reward;//开启赞赏
     private Boolean copyright;//版权、转载声明
-    private Boolean comment;
-    private Boolean recommend;
+    private Boolean comment;//开启评论
+    private Boolean recommend;//是否推荐
     private Boolean publish;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
@@ -41,6 +43,16 @@ public class blog {
 
     @Transient
     private String tagIds;
+
+    private String synopsis;
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
+    }
 
     public blog() {
     }
@@ -188,6 +200,32 @@ public class blog {
     public void setTagIds(String tagIds) {
         this.tagIds = tagIds;
     }
+
+
+    public void init(){
+        this.tagIds = tagsToIds(this.getTags());
+        System.out.println(tagIds);
+    }
+
+    private String tagsToIds(List<tag> tags) {
+        if(!tags.isEmpty()){
+            StringBuffer ids =new StringBuffer();
+            boolean flag = false;
+            for(tag tag : tags) {
+                if (flag){
+                    ids.append(",");
+                }else{
+                    flag = true;
+                }
+                ids.append(tag.getId());
+            }
+            return ids.toString();
+        }else{
+            return tagIds;
+        }
+
+    }
+
 
     @Override
     public String toString() {

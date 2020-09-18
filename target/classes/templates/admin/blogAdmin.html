@@ -56,20 +56,21 @@
             </a>
           </div>
           <!-- 发布博客 -->
-          <div class="ui tab active" data-tab="fabu" th:class="${flag}? 'ui tab':'ui tab active'">
-            <form th:action="@{/admin/blogAdmin/blogsave}" method="POST" class="ui form my-margin-top-1em" id="blog-form">
+          <div class="ui tab" data-tab="fabu" th:class="${flag}? 'ui tab':'ui tab active'">
+            <form th:object="${blog}" th:action="@{/admin/blogAdmin/blogsave}" method="POST" class="ui form my-margin-top-1em" id="blog-form">
                 <input type="hidden" name="publish">
+                <input type="hidden" name="id" th:value="*{id}">
               <!-- 博客标题以及是否原创 -->
               <div class="required field">
                   <div class="ui left labeled input">
                       <label class="ui teal basic label">标题</label>
-                      <input type="text" name="title" id="title" placeholder="请输入标题">
+                      <input type="text" name="title" id="title" placeholder="请输入标题" th:value="*{title}">
                   </div>
               </div>
               <!-- 博客内容 -->
               <div class="required field">
                 <div id="md-content" style="z-index: 1000000 !important;">
-                  <textarea name="content" id="content" style="display: none;">[TOC]
+                  <textarea name="content" id="content" style="display: none;" th:text="*{content}">[TOC]
 
 #### Disabled options
 
@@ -109,7 +110,7 @@
                       <div class="ui left labeled action input">
                           <label class="ui compact teal basic label">原创与否</label>
                           <div class="ui fluid selection dropdown">
-                              <input type="hidden" name="tag">
+                              <input type="hidden" name="flag" th:value="*{flag}">
                               <i class="dropdown icon"></i>
                               <div class="default text">原创</div>
                               <div class="menu">
@@ -125,7 +126,7 @@
                   <div class="ui left labeled action input">
                     <label class="ui compact teal basic label">分类</label>
                     <div class="ui fluid selection dropdown">
-                      <input type="hidden" name="catalog" id="catalog">
+                      <input type="hidden" name="catalog" id="catalog" th:value="${fuck}">
                       <i class="dropdown icon"></i>
                       <div class="default text">分类</div>
                       <div class="menu">
@@ -140,7 +141,7 @@
                   <div class="ui left labeled action input">
                     <label class="ui compact teal basic label">标签</label>
                     <div class="ui fluid multiple search selection dropdown">
-                      <input type="hidden" name="tag" id="tag">
+                      <input type="hidden" name="tagIds" id="tagIds" th:value="*{tagIds}">
                       <i class="dropdown icon"></i>
                       <div class="default text">标签</div>
                       <div class="menu">
@@ -155,32 +156,32 @@
               <div class="required field">
                 <div class="ui left labeled input">
                   <label class="ui teal basic label">图片</label>
-                  <input type="text" name="picture" id="picture" placeholder="图片引用地址">
+                  <input type="text" name="picture" id="picture" placeholder="图片引用地址"  th:value="*{picture}">
                 </div>
               </div>
               <!-- 发布选项 -->
               <div class="ui grid">
                 <div class="three wide column">
                   <div class="ui toggle checkbox">
-                    <input type="checkbox" id="recommend" name="recommend" class="hidden">
+                    <input type="checkbox" id="recommend" name="recommend" class="hidden" th:checked="*{recommend}">
                     <label for="recommend">开启推荐</label>
                   </div>
                 </div>
+<!--                <div class="three wide column">-->
+<!--                  <div class="ui toggle checkbox my-padding-right-1em">-->
+<!--                    <input type="checkbox" id="original" name="original" class="hidden" th:checked="*{original}">-->
+<!--                    <label for="original">开启原创</label>-->
+<!--                  </div>-->
+<!--                </div>-->
                 <div class="three wide column">
                   <div class="ui toggle checkbox my-padding-right-1em">
-                    <input type="checkbox" id="original" name="original" class="hidden">
-                    <label for="original">开启原创</label>
-                  </div>
-                </div>
-                <div class="three wide column">
-                  <div class="ui toggle checkbox my-padding-right-1em">
-                    <input type="checkbox" id="reward" name="reward" class="hidden">
+                    <input type="checkbox" id="reward" name="reward" class="hidden" th:checked="*{reward}">
                     <label for="reward">开启赞赏</label>
                   </div>
                 </div>
                 <div class="three wide column">
                   <div class="ui toggle checkbox my-padding-right-1em">
-                    <input type="checkbox" id="comment" name="comment" class="hidden">
+                    <input type="checkbox" id="comment" name="comment" class="hidden" th:checked="*{comment}">
                     <label for="comment">开启评论</label>
                   </div>
                 </div>
@@ -223,7 +224,7 @@
                   </button>
                 </div>
                 <div class="field">
-                  <a href="#" class="ui mini teal basic button">
+                  <a href="#" th:href="@{/admin/blogAdmin}" class="ui mini teal basic button">
                   <i class="add icon"></i>新增</a>
                 </div>
               </div>
@@ -261,7 +262,7 @@
                           <td th:text="${blog.publish} ? '发布':'草稿'">发布</td>
                           <td th:text="${blog.updateTime}">2020-8-27 00:23:36</td>
                           <td>
-                              <a href="#" th:name="${blog.title}" th:id="${blog.id}" class="ui mini teal button my-popup">编辑</a>
+                              <a href="#" th:href="@{/admin/blogAdmin/{id}/edit(id=${blog.id})}" th:name="${blog.title}" th:id="${blog.id}" class="ui mini teal button my-popup">编辑</a>
                               <a href="#" th:href="@{/admin/blogAdmin/{id}/delete(id=${blog.id})}" class="ui mini red button">删除</a>
                           </td>
                       </tr>
