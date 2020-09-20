@@ -182,10 +182,12 @@
     <a class="item"><i class="book icon"></i>留言板</a>
     <a class="item"><i class="info icon"></i>关于我</a>
     <div class="right item">
-      <div class="ui transparent icon input">
-        <i class="search icon link"></i>
-        <input type="text" placeholder="搜索博客" style="width:15em;">
-      </div>
+      <form name="search" action="#">
+        <div class="ui transparent icon input">
+          <i class="search icon link" onclick="document.forms['search'].submit()"></i>
+          <input type="text" name="query" placeholder="搜索博客" style="width:15em;">
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -274,7 +276,7 @@
                             <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-08-22</span>
                           </div>
                           <div class="item">
-                            <i class="eye icon"></i> <span  th:text="${blog.views}">2321</span>
+                            <i class="eye icon"></i> <span th:text="${blog.views}">2321</span>
                           </div>
                           <div class="item">
                             <i class="comment icon"></i> 0
