@@ -182,10 +182,10 @@
     <a class="item"><i class="book icon"></i>留言板</a>
     <a class="item"><i class="info icon"></i>关于我</a>
     <div class="right item">
-      <form name="search" action="#">
-        <div class="ui transparent icon input">
-          <i class="search icon link" onclick="document.forms['search'].submit()"></i>
+      <form name="search2" action="#" th:action="@{/search}" method="post">
+        <div class="ui transparent inverted icon input">
           <input type="text" name="query" placeholder="搜索博客" style="width:15em;">
+          <i onclick="document.forms['search2'].submit()" class="search icon link"></i>
         </div>
       </form>
     </div>
@@ -211,15 +211,17 @@
           <i class="sidebar icon"></i>
         </a>
         <a class="item active"><i class="home icon"></i>首页</a>
-        <a class="item"><i class="idea icon "></i>分类</a>
-        <a class="item"><i class="tags icon"></i>标签</a>
+        <a class="item" th:href="@{/catalog}"><i class="idea icon "></i>分类</a>
+        <a class="item" th:href="@{/tag}"><i class="tags icon"></i>标签</a>
         <a class="item"><i class="book icon"></i>留言板</a>
         <a class="item"><i class="info icon"></i>关于我</a>
         <div class="right item">
-          <div class="ui transparent inverted icon input">
-            <i class="search icon link"></i>
-            <input type="text" placeholder="搜索博客" style="width:15em;">
-          </div>
+          <form name="search1" action="#" th:action="@{/search}" method="post">
+            <div class="ui transparent inverted icon input">
+              <input type="text" name="query" placeholder="搜索博客" style="width:15em;" onchange="document.forms['search2'].value=document.forms['search1'].value;">
+              <i onclick="document.forms['search1'].submit()" class="search icon link"></i>
+            </div>
+          </form>
         </div>
       </div>
     </div>

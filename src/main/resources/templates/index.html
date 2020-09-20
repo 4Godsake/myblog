@@ -19,10 +19,10 @@
           <a class="item"><i class="book icon"></i>留言板</a>
           <a class="item"><i class="info icon"></i>关于我</a>
           <div class="ui right aligned item">
-            <form name="search" action="#">
-              <div class="ui transparent icon input">
+            <form name="search" action="#" th:action="@{/search}" method="post">
+              <div class="ui transparent inverted icon input">
                 <i class="search icon link" onclick="document.forms['search'].submit()"></i>
-                <input type="text" name="query" placeholder="搜索博客" style="width:15em;" th:text="">
+                <input type="text" name="query" placeholder="搜索博客" style="width:15em;" th:value="${query}">
               </div>
             </form>
             </div>
@@ -40,10 +40,10 @@
             <div class="ui top attached segment">
               <div class="ui middle aligned two column grid">
                 <div class="column">
-                  <h3 class="ui teal header">博客</h3>
+                  <h3 class="ui teal header">博客搜索</h3>
                 </div>
                 <div class="column right aligned">
-                  共 <h3 class="ui orange header my-inlineblock" th:text="${page.totalElements}">14</h3> 篇博客
+                  搜索到 <h3 class="ui orange header my-inlineblock" th:text="${page.totalElements}">14</h3> 篇博客
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
               <div class="ui segment" th:each="blog : ${recommendBlogs}">
                 <a href="#" target="_blank" class="my-color-black">
                   <i class="angle right teal icon"></i>
-                <span th:text="${blog.title`}">博客标题样例</span>
+                <span th:text="${blog.title}">博客标题样例</span>
                 </a>
               </div>
             </div>

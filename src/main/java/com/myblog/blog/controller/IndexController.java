@@ -37,9 +37,12 @@ public class IndexController {
         return "home";
     }
 
-    @PostMapping("/blogSearch")
+    @PostMapping("/search")
     public String search(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)
                                     @RequestParam String query, Pageable pageable, Model model){
+        model.addAttribute("catalogs",catalogService.listCatalogTop(6));
+        model.addAttribute("tags",tagService.listTagTop(10));
+        model.addAttribute("recommendBlogs",blogService.listRecommendBlogTop(6));
         model.addAttribute("page",blogService.searchBlog("%"+query+"%",pageable));
         model.addAttribute("query",query);
         System.out.println("--------blogSearch----------");
