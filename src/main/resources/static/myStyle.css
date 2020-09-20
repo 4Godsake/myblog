@@ -1,5 +1,5 @@
 body{
-    background-image:url('../img/homebg.jpg');
+    background-image:url('../img/homebg.jpg') !important;
     background-size:100%;
     background-attachment:fixed
 }
@@ -22,7 +22,7 @@ body{
     padding-bottom: 2em !important;
 }
 .my-nav-opacity{
-    opacity: 0.85 !important;
+    opacity: 0.95 !important;
 }
 .my-label-size-min{
     padding: 0.3em !important;
@@ -62,6 +62,9 @@ body{
 /* opacity */
 .my-opacity-70{
     opacity: 0.7;
+}
+.my-opacity-85{
+    opacity: 0.85;
 }
 .my-opacity-90{
     opacity: 0.9;

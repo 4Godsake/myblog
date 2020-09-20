@@ -13,6 +13,7 @@ public interface CatalogService {
     catalog getCatalogByName(String name);
     Page<catalog> listCatalog(Pageable pageable);
     List<catalog> listCatalog();
+    List<catalog> listCatalogTop(Integer size);
     catalog updateCatalog(Long id,catalog catalog);
     void deleteCatalog(Long id);
 

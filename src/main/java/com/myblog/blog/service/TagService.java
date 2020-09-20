@@ -14,6 +14,7 @@ public interface TagService {
     tag getTagByName(String name);
     Page<tag> listTag(Pageable pageable);
     List<tag> listTag();
+    List<tag> listTagTop(Integer size);
     List<tag> listTags(String ids);
     tag updateTag(Long id,tag tag);
     void deleteTag(Long id);

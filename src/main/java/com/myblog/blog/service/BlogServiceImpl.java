@@ -4,10 +4,14 @@ import com.myblog.blog.dao.BlogRepository;
 import com.myblog.blog.entity.blog;
 import com.myblog.blog.entity.blogQuery;
 import com.myblog.blog.entity.catalog;
+import com.myblog.blog.util.MyBeanUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,6 +65,13 @@ public class BlogServiceImpl implements BlogService{
     }
 
     @Override
+    public List<blog> listRecommendBlogTop(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "updateTime");
+        Pageable pageable = PageRequest.of(0,size,sort);
+        return blogRepository.findTop(pageable);
+    }
+
+    @Override
     public Page<blog> listBlog(Pageable pageable) {
         return blogRepository.findAll(pageable);
     }
@@ -68,18 +79,9 @@ public class BlogServiceImpl implements BlogService{
     @Transactional
     @Override
     public blog saveBlog(blog blog) {
-        System.out.println(blog.getTagIds()+"-------------标签");
-        System.out.println(blog.getTags()+"-------------标签2");
-        System.out.println(blog.getTitle()+"-------------标签");
-        System.out.println(blog.getCatalog()+"-------------标签");
-        if (blog.getId() == null){
             blog.setCreateTime(new Date());
             blog.setUpdateTime(new Date());
             blog.setViews(0);
-        }else {
-            blog.setUpdateTime(new Date());
-        }
-
         return blogRepository.save(blog);
     }
 
@@ -87,7 +89,8 @@ public class BlogServiceImpl implements BlogService{
     @Override
     public blog updateBlog(Long id, blog blog) {
         blog blog1 = blogRepository.findById(id).get();
-        BeanUtils.copyProperties(blog,blog1);
+        BeanUtils.copyProperties(blog,blog1, MyBeanUtils.getNullPropertyNames(blog));
+        blog1.setUpdateTime(new Date());
         return blogRepository.save(blog1);
     }
 

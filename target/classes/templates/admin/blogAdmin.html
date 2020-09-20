@@ -103,6 +103,13 @@
 ```</textarea>
                 </div>
               </div>
+                <!-- synopsis -->
+                <div class="required field">
+                    <div class="ui left labeled input">
+                        <label class="ui teal basic label">博客简介</label>
+                        <input type="text" name="synopsis" id="synopsis" placeholder="请输入博客简介"  th:value="*{synopsis}">
+                    </div>
+                </div>
               <!-- 博客分类 -->
               <div class="three fields">
                   <!--原创flag-->
@@ -163,7 +170,7 @@
               <div class="ui grid">
                 <div class="three wide column">
                   <div class="ui toggle checkbox">
-                    <input type="checkbox" id="recommend" name="recommend" class="hidden" th:checked="*{recommend}">
+                    <input type="checkbox" name="recommend" class="hidden" th:checked="*{recommend}">
                     <label for="recommend">开启推荐</label>
                   </div>
                 </div>

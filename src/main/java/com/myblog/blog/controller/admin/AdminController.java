@@ -70,7 +70,7 @@ public class AdminController {
     public String blogSearch(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)
                                     Pageable pageable, blogQuery blog, Model model){
         model.addAttribute("page", blogService.searchBlog(pageable,blog));
-        System.out.println("--------blogAdmin----------"+blog.getCatalogId());
+        System.out.println("--------blogSearch----------"+blog.getCatalogId());
         return "admin/blogAdmin :: blogList";
     }
 
@@ -79,7 +79,12 @@ public class AdminController {
         blog.setUser((user) session.getAttribute("user"));
         blog.setCatalog(catalogService.getCatalog(blog.getCatalog().getId()));
         blog.setTags(tagService.listTags(blog.getTagIds()));
-        blog blog1 =blogService.saveBlog(blog);
+        blog blog1;
+        if (blog.getId() == null){
+            blog1 = blogService.saveBlog(blog);
+        }else {
+            blog1 = blogService.updateBlog(blog.getId(),blog);
+        }
         if(blog1 == null){
             attributes.addFlashAttribute("messageError","发布失败");
         }else {
