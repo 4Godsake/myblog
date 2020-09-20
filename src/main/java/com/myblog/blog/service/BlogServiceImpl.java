@@ -76,6 +76,11 @@ public class BlogServiceImpl implements BlogService{
         return blogRepository.findAll(pageable);
     }
 
+    @Override
+    public Page<blog> searchBlog(String query, Pageable pageable) {
+        return blogRepository.findByQuery(query, pageable);
+    }
+
     @Transactional
     @Override
     public blog saveBlog(blog blog) {

@@ -19,9 +19,12 @@
           <a class="item"><i class="book icon"></i>留言板</a>
           <a class="item"><i class="info icon"></i>关于我</a>
           <div class="ui right aligned item">
-            <div class="ui transparent inverted icon input">
-              <i class="search icon link"></i>
-              <input type="text" placeholder="Search" style="width:15em;">
+            <form name="search" action="#">
+              <div class="ui transparent icon input">
+                <i class="search icon link" onclick="document.forms['search'].submit()"></i>
+                <input type="text" name="query" placeholder="搜索博客" style="width:15em;" th:text="">
+              </div>
+            </form>
             </div>
           </div>
         </div>

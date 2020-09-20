@@ -12,6 +12,7 @@ public interface BlogService {
 //    blog getBlog(String name);
     blog getBlog(Long id);
     Page<blog> listBlog(Pageable pageable);
+    Page<blog> searchBlog(String query, Pageable pageable);
     Page<blog> searchBlog(Pageable pageable, blogQuery blog);
     List<blog> listRecommendBlogTop(Integer size);
     blog saveBlog(blog blog);
