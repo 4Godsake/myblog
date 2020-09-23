@@ -2,6 +2,7 @@ package com.myblog.blog.controller;
 
 import com.myblog.blog.service.BlogService;
 import com.myblog.blog.service.CatalogService;
+import com.myblog.blog.service.CommentService;
 import com.myblog.blog.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -25,6 +26,8 @@ public class IndexController {
     private CatalogService catalogService;
     @Autowired
     private TagService tagService;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/")
     public String index(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)
@@ -53,9 +56,10 @@ public class IndexController {
     public String blogInfo(@PathVariable Long id, Model model){
         model.addAttribute("blog",blogService.getBlog(id));
         model.addAttribute("content",blogService.getContent(id));
+//        model.addAttribute("comments",commentService.listCommentByBlogId(id));
         blogService.incViews(id);
         System.out.println("--------blogInfo----------");
-        return "blogInfo";
+        return "blog";
     }
     @GetMapping("/catalog")
     public String catalog(){

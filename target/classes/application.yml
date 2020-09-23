@@ -31,3 +31,6 @@ logging:
     com.myblog.blog: debug
   file:
     name: myblog/aspect.log
+
+#自定义评论区头像
+comment.avatar: /img/avatar/avatar01.png
