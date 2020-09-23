@@ -5,9 +5,9 @@ import com.myblog.blog.entity.blog;
 import com.myblog.blog.entity.blogQuery;
 import com.myblog.blog.entity.catalog;
 import com.myblog.blog.util.MyBeanUtils;
+import com.myblog.blog.util.mdConvertUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -97,6 +97,23 @@ public class BlogServiceImpl implements BlogService{
         BeanUtils.copyProperties(blog,blog1, MyBeanUtils.getNullPropertyNames(blog));
         blog1.setUpdateTime(new Date());
         return blogRepository.save(blog1);
+    }
+
+    @Override
+    /* 将Markdown格式内容转化为html标签 */
+    public String getContent(Long id) {
+        String content = blogRepository.findById(id).get().getContent();
+        return mdConvertUtils.mdToHTML(content);
+    }
+    /* 增加浏览次数 */
+    @Override
+    public void incViews(Long id) {
+        blog blog = blogRepository.findById(id).get();
+        Integer view = blog.getViews()+1;
+        blog blog1 = blogRepository.findById(id).get();
+        BeanUtils.copyProperties(blog,blog1, MyBeanUtils.getNullPropertyNames(blog));
+        blog1.setViews(view);
+        blogRepository.save(blog1);
     }
 
     @Transactional

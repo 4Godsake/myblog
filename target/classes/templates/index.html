@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>搜索结果</title>
+    <title>搜索结果 </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="../static/myStyle.css" th:href="@{/myStyle.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -152,7 +152,7 @@
                 <i class="bookmark icon"></i>推荐
               </div>
               <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                <a href="#" target="_blank" class="my-color-black">
+                <a href="#" target="_blank" class="my-color-black" th:href="@{/blog/{id}(id=${blog.id})}">
                   <i class="angle right teal icon"></i>
                 <span th:text="${blog.title}">博客标题样例</span>
                 </a>

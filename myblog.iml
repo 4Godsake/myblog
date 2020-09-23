@@ -133,5 +133,6 @@
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:5.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-test:2.3.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.atlassian.commonmark:commonmark:0.15.2" level="project" />
   </component>
 </module>

@@ -38,27 +38,25 @@
               <div class="ui horizontal link list">
                 <!-- 头像 -->
                 <div class="item">
-                  <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image">
+                  <img src="https://picsum.photos/id/1/100/100" alt="" class="ui avatar image" th:src="${blog.user.avatar}">
                   <!-- 图片后面加文字等用content -->
                   <div class="content">
-                    <a href="#" class="header">RapDog</a>
+                    <a href="#" class="header" th:text="${blog.user.username}">RapDog</a>
                   </div>
                 </div>
                 <div class="item">
                   更于：2020-08-22 09:34
                 </div>
-                <div class="item" th:text="${blog.views}">
-                  <i class="eye icon"></i>2321
+                <div class="item">
+                  <i class="eye icon"></i><span th:text="${blog.views}">1313</span>
                 </div>
                 <div class="item">
-                  <div class="ui label basic orange">转载</div>
+                  <div class="ui label basic orange" th:text="${blog.flag}">转载</div>
                 </div>
               </div>
             </div>
             <div class="right aligned five wide column">
-              <a href="#" target="_blank" class="ui label left pointing basic teal my-label-size-min my-text-thin">样例标签</a>
-              <a href="#" target="_blank" class="ui label left pointing basic teal my-label-size-min my-text-thin">样例标签</a>
-              <a href="#" target="_blank" class="ui label left pointing basic teal my-label-size-min my-text-thin">样例标签</a>
+              <a href="#" target="_blank" class="ui label teal basic" th:text="${blog.catalog.name}">样例标签</a>
             </div>
           </div>
         </div>
@@ -66,8 +64,16 @@
         <div class="ui attached segment my-padding-lr-4em my-padding-top-2em">
           <!-- 标题 -->
           <h2 class="ui center aligned header" th:text="${blog.title}">这是一篇样例博客</h2>
+          <!--tags-->
+          <div class="ui grid">
+            <div class="right aligned nine wide column"></div>
+            <div class="right aligned seven wide column">
+              <a href="#" target="_blank" class="ui label left pointing basic teal my-label-size-min my-text-thin" th:each="tag : ${blog.tags}" th:text="${tag.name}">样例标签</a>
+            </div>
+          </div>
           <!-- 正文 -->
-          <div><p>原文链接：https://www.jianshu.com/p/0b60dd03e163</p>
+          <div th:utext="${content}">
+          <p>原文链接：https://www.jianshu.com/p/0b60dd03e163</p>
           <pre><code class="language-css">p { color: red }</code></pre>
           <p>后人解读《西游记》时，说孙悟空死在了“真假美猴王”那一节，原因是后来的孙悟空，再没有反抗过。</p>
           <p>是这样吗？也许，是吧。</p>
@@ -162,8 +168,8 @@
           <div class="ui grid middle aligned padded">
             <div class="eleven wide column">
               <ul class="list">
-                <li>作者：RapDog（联系作者）</li>
-                <li>发表时间：2020-03-02 23:34</li>
+                <li>作者：<span th:text="${blog.user.username}">Rapdog</span></li>
+                <li>发表时间：<span th:text="${#dates.format(blog.createTime,'yyyy-MM-dd HH:mm')}">2020-03-02 23:34</span></li>
                 <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
                 <li>转载声明：转载文章请附上原文链接</li>
               </ul>
@@ -175,53 +181,71 @@
         </div>
         <!-- 留言部分 -->
         <div class="ui bottom attached padded secondary segment">
+            <div class="ui comments" style="max-width: 100%;">
+              <h3 class="ui teal dividing center aligned header">评论区</h3>
+              <!-- 评论区 -->
 
-          <div class="ui comments" style="max-width: 100%;">
-            <h3 class="ui teal dividing center aligned header">评论区</h3>
-            <!-- 评论区 -->
-            <div class="ui segment">
-              <div class="comment">
-                <a class="avatar">
-                  <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
-                </a>
-                <div class="content">
-                  <a class="author">Matt</a>
-                  <div class="metadata">
-                    <span class="date">今天下午 5:42</span>
-                  </div>
-                  <div class="text">太赞了！ </div>
-                  <div class="actions">
-                    <a class="reply">Reply</a>
-                  </div>
-                </div>
-              </div>
-              <div class="comment">
-                <a class="avatar">
-                  <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
-                </a>
-                <div class="content">
-                  <a class="author">Elliot Fu</a>
-                  <div class="metadata">
-                    <span class="date">昨天上午12:30</span>
-                  </div>
-                  <div class="text">
-                    <p>這對我的研究是非常有用.謝謝!</p>
-                  </div>
-                  <div class="actions">
-                    <a class="reply">Reply</a>
-                  </div>
-                </div>
-                <div class="comments">
+              <div class="ui segment" id="comment-container">
+                <div th:fragment="commentList">
                   <div class="comment">
                     <a class="avatar">
                       <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
                     </a>
                     <div class="content">
-                      <a class="author">Jenny Hess</a>
+                      <a class="author">Matt</a>
                       <div class="metadata">
-                        <span class="date">刚刚</span>
+                        <span class="date">今天下午 5:42</span>
                       </div>
-                      <div class="text">艾略特你永远是多么正确 :) </div>
+                      <div class="text">太赞了！ </div>
+                      <div class="actions">
+                        <a class="reply" data-commentid="-1" data-commentnickname="Matt" onclick="reply(this)">回复</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment">
+                    <a class="avatar">
+                      <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
+                    </a>
+                    <div class="content">
+                      <a class="author">Elliot Fu</a>
+                      <div class="metadata">
+                        <span class="date">昨天上午12:30</span>
+                      </div>
+                      <div class="text">
+                        <p>這對我的研究是非常有用.謝謝!</p>
+                      </div>
+                      <div class="actions">
+                        <a class="reply">Reply</a>
+                      </div>
+                    </div>
+                    <div class="comments">
+                      <div class="comment">
+                        <a class="avatar">
+                          <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
+                        </a>
+                        <div class="content">
+                          <a class="author">Jenny Hess</a>
+                          <div class="metadata">
+                            <span class="date">刚刚</span>
+                          </div>
+                          <div class="text">艾略特你永远是多么正确 :) </div>
+                          <div class="actions">
+                            <a class="reply">Reply</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment">
+                    <a class="avatar">
+                      <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
+                    </a>
+                    <div class="content">
+                      <a class="author">Joe Henderson</a>
+                      <div class="metadata">
+                        <span class="date">5 天以前</span>
+                      </div>
+                      <div class="text">老兄，这太棒了。非常感谢。 </div>
                       <div class="actions">
                         <a class="reply">Reply</a>
                       </div>
@@ -229,47 +253,35 @@
                   </div>
                 </div>
               </div>
-              <div class="comment">
-                <a class="avatar">
-                  <img src="../static/img/avatar/avatar01.png" th:src="@{/img/avatar/avatar01.png}">
-                </a>
-                <div class="content">
-                  <a class="author">Joe Henderson</a>
-                  <div class="metadata">
-                    <span class="date">5 天以前</span>
+              <!-- 输入评论 -->
+              <div class="ui segment my-margin-tb-2em">
+                <form class="ui reply form" id="comment-form">
+                  <input type="hidden" name="blog.id" th:value="${blog.id}">
+                  <input type="hidden" name="parentComment.id" value="-1">
+                  <div class="field">
+                    <textarea placeholder="请输入评论内容..." name="content"></textarea>
                   </div>
-                  <div class="text">老兄，这太棒了。非常感谢。 </div>
-                  <div class="actions">
-                    <a class="reply">Reply</a>
+                  <div class="fields">
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <input type="text" name="nickname" placeholder="姓名">
+                        <i class="user icon"></i>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui left icon input">
+                        <input type="text" name="email" placeholder="邮箱">
+                        <i class="mail icon"></i>
+                      </div>
+                    </div>
+                    <div class="ui teal labeled submit icon button" id="commentPost-btn"><i class="icon edit"></i> 回复 </div>
                   </div>
-                </div>
+                  <div class="ui mini error message"></div>
+                </form>
+
               </div>
             </div>
-            <!-- 输入评论 -->
-            <div class="ui segment my-margin-tb-2em">
-              <form class="ui reply form">
-                <div class="field">
-                  <textarea placeholder="请输入评论内容..."></textarea>
-                </div>
-                <div class="fields">
-                  <div class="field">
-                    <div class="ui left icon input">
-                      <input type="text" name="nickname" placeholder="姓名">
-                      <i class="user icon"></i>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="ui left icon input">
-                      <input type="text" name="email" placeholder="邮箱">
-                      <i class="mail icon"></i>
-                    </div>
-                  </div>
-                  <div class="ui teal labeled submit icon button"><i class="icon edit"></i> 回复 </div>
-                </div>
-  
-              </form>
-            </div>
-          </div>
+
         </div>
 
       </div>
@@ -313,9 +325,72 @@
     <script>
       $('#payButton').popup({
         popup : $('.payQR.popup'),
-        on : 'click',
+        on : 'hover',
         position :'bottom center'
       })
+
+      //评论区表单验证
+      $('.ui.form').form({
+        fields:{
+          content:{
+            identifier:'content',
+            rules:[{
+              type:'empty',
+              prompt:'请输入评论内容'
+            }]
+          },
+          nickname:{
+            identifier:'nickname',
+            rules:[{
+              type:'empty',
+              prompt:'请输入您的昵称'
+            }]
+          },
+          email:{
+            identifier:'email',
+            rules:[{
+              type:'email',
+              prompt:'请填写正确的邮箱地址，仅用于跟您取得联系'
+            }]
+          }
+        },
+      });
+
+      $('#commentPost-btn').click(function (){
+        var boo = $('.ui.form').form('validate form');
+        if(boo){
+          console.log('校验成功')
+        }else{
+          console.log('表单验证失败')
+        }
+      });
+
+      function postData() {
+        $("#comment-container").load(/*[[@{/comments}]]*/"",{
+          "parentComment.id" : $("[name='parentComment.id']").val(),
+          "blog.id" : $("[name='blog.id']").val(),
+          "nickname" : $("[name='nickname']").val(),
+          "email" : $("[name='email']").val(),
+          "content" : $("[name='content']").val(),
+        },function(responseTxt,statusTxt,xhr){
+          $(window).scrollTo($('#comment-container'),500);
+          clearContent();
+        });
+      }
+
+      function clearContent(){
+        $("[name='parentComment.id']").val(-1);
+        $("[name='content']").val('')
+        $("[name='content']").attr("placeholder", "请输入评论内容...");
+      }
+
+      function reply(obj){
+        var commentId = $(obj).data('commentid');
+        var commentNickname = $(obj).data('commentnickname');
+        $("[name='content']").attr("placeholder", "@"+commentNickname).focus();
+        $("[name='parentComment.id']").val(commentId);
+        $(window).scrollTo($('#comment-form'),500);
+      }
     </script>
 </body>
 </html>

@@ -1,32 +1,259 @@
-2020-09-21 00:25:12.458  INFO 12008 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
-2020-09-21 00:25:12.808  INFO 12008 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :home
-2020-09-21 00:25:12.808  INFO 12008 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 00:25:27.553  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.catalog', args=[]}
-2020-09-21 00:25:27.555  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :catalog
-2020-09-21 00:25:27.555  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 01:05:15.433  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
-2020-09-21 01:05:15.782  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :home
-2020-09-21 01:05:15.783  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 13:20:43.025  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/search', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.search', args=[tes, Page request [number: 0, size 20, sort: UNSORTED], {}]}
-2020-09-21 13:20:43.266  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :index
-2020-09-21 13:20:43.266  INFO 12008 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 18:42:01.366  INFO 12008 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
-2020-09-21 18:42:01.775  INFO 12008 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : Result :home
-2020-09-21 18:42:01.775  INFO 12008 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 18:42:15.405  INFO 12008 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/search', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.search', args=[test, Page request [number: 0, size 20, sort: UNSORTED], {}]}
-2020-09-21 18:42:15.556  INFO 12008 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :index
-2020-09-21 18:42:15.556  INFO 12008 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 18:42:20.362 ERROR 12008 --- [http-nio-8080-exec-8] c.m.b.h.ControllerExceptionHandler       : Request URL:http://127.0.0.1:8080/search; Exception:{}
+2020-09-24 00:34:22.773  INFO 25696 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 25696 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-24 00:34:22.802 DEBUG 25696 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-24 00:34:22.803  INFO 25696 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-24 00:34:22.919  INFO 25696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 00:34:22.922  INFO 25696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 00:34:24.472  INFO 25696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 00:34:24.610  INFO 25696 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120ms. Found 4 JPA repository interfaces.
+2020-09-24 00:34:25.926  INFO 25696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 00:34:25.951  INFO 25696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 00:34:25.952  INFO 25696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-24 00:34:26.315  INFO 25696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 00:34:26.316  INFO 25696 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3392 ms
+2020-09-24 00:34:26.664  INFO 25696 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 00:34:26.752  INFO 25696 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 00:34:26.839  INFO 25696 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-24 00:34:26.952  WARN 25696 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-24 00:34:27.109  INFO 25696 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-24 00:34:27.313  WARN 25696 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-24 00:34:27.313  INFO 25696 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-24 00:34:27.707  INFO 25696 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-24 00:34:27.916  INFO 25696 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-24 00:34:27.945  INFO 25696 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 00:34:28.554  INFO 25696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 00:34:28.664  INFO 25696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-24 00:34:28.666  INFO 25696 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-24 00:34:30.458  INFO 25696 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 00:34:30.469  INFO 25696 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 00:34:31.561  INFO 25696 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-24 00:34:31.577  INFO 25696 --- [restartedMain] com.myblog.blog.BlogApplication          : Started BlogApplication in 9.654 seconds (JVM running for 12.625)
+2020-09-24 00:35:02.713  INFO 25696 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-24 00:35:02.713  INFO 25696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-24 00:35:02.747  INFO 25696 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2020-09-24 00:35:02.852  INFO 25696 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/13', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[13, {}]}
+2020-09-24 00:35:03.383  INFO 25696 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 00:35:03.384  INFO 25696 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 00:43:44.895  INFO 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 19976 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-24 00:43:44.903 DEBUG 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-24 00:43:44.904  INFO 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-24 00:43:45.030  INFO 19976 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 00:43:45.031  INFO 19976 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 00:43:46.227  INFO 19976 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 00:43:46.338  INFO 19976 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101ms. Found 4 JPA repository interfaces.
+2020-09-24 00:43:47.664  INFO 19976 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 00:43:47.700  INFO 19976 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 00:43:47.702  INFO 19976 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-24 00:43:48.116  INFO 19976 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 00:43:48.116  INFO 19976 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3085 ms
+2020-09-24 00:43:48.616  INFO 19976 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 00:43:48.771  INFO 19976 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 00:43:48.877  INFO 19976 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-24 00:43:49.121  INFO 19976 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-24 00:43:49.124  WARN 19976 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-24 00:43:49.279  WARN 19976 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-24 00:43:49.279  INFO 19976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-24 00:43:49.638  INFO 19976 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-24 00:43:49.712  INFO 19976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-24 00:43:49.733  INFO 19976 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 00:43:50.226  INFO 19976 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 00:43:50.294  INFO 19976 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-24 00:43:50.297  INFO 19976 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-24 00:43:51.610  INFO 19976 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 00:43:51.620  INFO 19976 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 00:43:52.455  INFO 19976 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-24 00:43:52.473  INFO 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : Started BlogApplication in 8.849 seconds (JVM running for 12.79)
+2020-09-24 00:47:34.006  INFO 19976 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-24 00:47:34.006  INFO 19976 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-24 00:47:34.027  INFO 19976 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-09-24 00:47:34.089  INFO 19976 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/13', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[13, {}]}
+2020-09-24 00:47:34.568  INFO 19976 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 00:47:34.568  INFO 19976 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 00:48:43.079  INFO 19976 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/13', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[13, {}]}
+2020-09-24 00:48:43.418  INFO 19976 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 00:48:43.418  INFO 19976 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 00:48:46.148  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/13', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[13, {}]}
+2020-09-24 00:48:46.483  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 00:48:46.484  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 00:48:49.920  INFO 19976 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/13', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[13, {}]}
+2020-09-24 00:48:50.252  INFO 19976 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 00:48:50.252  INFO 19976 --- [http-nio-8080-exec-8] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 00:49:20.630  WARN 19976 --- [http-nio-8080-exec-7] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,014] milliseconds.
+2020-09-24 01:01:43.024  INFO 19976 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-09-24 01:01:43.385  WARN 19976 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [c.blogs.size]; use collection function syntax instead [size(c.blogs)].
+2020-09-24 01:01:43.425  WARN 19976 --- [http-nio-8080-exec-7] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-24 01:01:43.496  INFO 19976 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-24 01:01:43.496  INFO 19976 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:01:56.462  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:01:56.789  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:01:56.789  INFO 19976 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:03:22.511  INFO 19976 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:03:22.831  INFO 19976 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:03:22.831  INFO 19976 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:12:29.712  INFO 19976 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 01:12:29.717  INFO 19976 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-24 01:12:29.722  INFO 19976 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-24 01:12:29.755  INFO 19976 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-24 01:12:29.918  INFO 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 19976 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-24 01:12:29.919 DEBUG 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-24 01:12:29.921  INFO 19976 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-24 01:12:30.283  INFO 19976 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 01:12:30.320  INFO 19976 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 4 JPA repository interfaces.
+2020-09-24 01:12:30.737  INFO 19976 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 01:12:30.739  INFO 19976 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 01:12:30.740  INFO 19976 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-24 01:12:30.868  INFO 19976 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 01:12:30.868  INFO 19976 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 939 ms
+2020-09-24 01:12:31.003  INFO 19976 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 01:12:31.031  INFO 19976 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 01:12:31.041  WARN 19976 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-2 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-24 01:12:31.045  INFO 19976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-09-24 01:12:31.052  WARN 19976 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'indexController': Unsatisfied dependency expressed through field 'blogService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.myblog.blog.service.BlogService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-09-24 01:12:31.052  INFO 19976 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 01:12:31.353  INFO 19976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-09-24 01:12:31.354  INFO 19976 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 01:12:32.416  INFO 19976 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 01:12:32.417  INFO 19976 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 01:12:32.418  INFO 19976 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-24 01:12:32.418  INFO 19976 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-09-24 01:12:32.423  INFO 19976 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-09-24 01:12:32.424  INFO 19976 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-09-24 01:12:32.434  INFO 19976 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
-org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:422) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-09-24 01:12:32.708 ERROR 19976 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field blogService in com.myblog.blog.controller.IndexController required a bean of type 'com.myblog.blog.service.BlogService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.myblog.blog.service.BlogService' in your configuration.
+
+2020-09-24 01:12:52.461  INFO 15520 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 15520 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-24 01:12:52.466 DEBUG 15520 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-24 01:12:52.467  INFO 15520 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-24 01:12:52.555  INFO 15520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 01:12:52.556  INFO 15520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 01:12:53.305  INFO 15520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 01:12:53.402  INFO 15520 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87ms. Found 4 JPA repository interfaces.
+2020-09-24 01:12:54.275  INFO 15520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 01:12:54.284  INFO 15520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 01:12:54.285  INFO 15520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-24 01:12:54.498  INFO 15520 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 01:12:54.499  INFO 15520 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1943 ms
+2020-09-24 01:12:54.718  INFO 15520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 01:12:54.780  INFO 15520 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 01:12:54.832  INFO 15520 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-24 01:12:54.934  WARN 15520 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-24 01:12:54.957  INFO 15520 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-24 01:12:55.051  WARN 15520 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-24 01:12:55.051  INFO 15520 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-24 01:12:55.312  INFO 15520 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-24 01:12:55.499  INFO 15520 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-24 01:12:55.514  INFO 15520 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 01:12:55.760  INFO 15520 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 01:12:55.820  INFO 15520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-24 01:12:55.822  INFO 15520 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-24 01:12:57.336  INFO 15520 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 01:12:57.344  INFO 15520 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 01:12:58.246  INFO 15520 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-24 01:12:58.261  INFO 15520 --- [restartedMain] com.myblog.blog.BlogApplication          : Started BlogApplication in 6.697 seconds (JVM running for 10.167)
+2020-09-24 01:13:13.675  INFO 15520 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-24 01:13:13.675  INFO 15520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-24 01:13:13.695  INFO 15520 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-09-24 01:13:13.741  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:13:14.345  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:13:14.345  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:13:28.566  INFO 15520 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/15', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[15, {}]}
+2020-09-24 01:13:29.064  INFO 15520 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:13:29.064  INFO 15520 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:13:32.386  INFO 15520 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-09-24 01:13:32.803  WARN 15520 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [c.blogs.size]; use collection function syntax instead [size(c.blogs)].
+2020-09-24 01:13:32.857  WARN 15520 --- [http-nio-8080-exec-5] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-24 01:13:32.933  INFO 15520 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-24 01:13:32.933  INFO 15520 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:13:38.192  INFO 15520 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-09-24 01:13:38.667  INFO 15520 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-24 01:13:38.667  INFO 15520 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:13:44.746  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:13:45.234  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:13:45.234  INFO 15520 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:30.045  INFO 15536 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 15536 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-24 01:19:30.065 DEBUG 15536 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-24 01:19:30.066  INFO 15536 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-24 01:19:30.164  INFO 15536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 01:19:30.165  INFO 15536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 01:19:30.970  INFO 15536 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 01:19:31.049  INFO 15536 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 4 JPA repository interfaces.
+2020-09-24 01:19:31.909  INFO 15536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 01:19:31.919  INFO 15536 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 01:19:31.920  INFO 15536 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-24 01:19:32.130  INFO 15536 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 01:19:32.130  INFO 15536 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1965 ms
+2020-09-24 01:19:32.456  INFO 15536 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 01:19:32.524  INFO 15536 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 01:19:32.584  INFO 15536 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-24 01:19:32.737  WARN 15536 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-24 01:19:32.764  INFO 15536 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-24 01:19:32.991  WARN 15536 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-24 01:19:32.991  INFO 15536 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-24 01:19:33.372  INFO 15536 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-24 01:19:33.399  INFO 15536 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-24 01:19:33.422  INFO 15536 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 01:19:34.013  INFO 15536 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 01:19:34.065  INFO 15536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-24 01:19:34.068  INFO 15536 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-24 01:19:35.086  INFO 15536 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 01:19:35.093  INFO 15536 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 01:19:35.750  INFO 15536 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-24 01:19:35.764  INFO 15536 --- [restartedMain] com.myblog.blog.BlogApplication          : Started BlogApplication in 6.739 seconds (JVM running for 9.385)
+2020-09-24 01:19:39.521  INFO 15536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-24 01:19:39.521  INFO 15536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-24 01:19:39.535  INFO 15536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-09-24 01:19:39.573  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:19:40.288  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:19:40.289  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:42.498  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:19:43.051  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:19:43.051  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:44.275  INFO 15536 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:19:44.833  INFO 15536 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:19:44.833  INFO 15536 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:46.583  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:19:47.143  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:19:47.143  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:53.877  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-09-24 01:19:54.186  WARN 15536 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [c.blogs.size]; use collection function syntax instead [size(c.blogs)].
+2020-09-24 01:19:54.233  WARN 15536 --- [http-nio-8080-exec-3] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-24 01:19:54.289  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-24 01:19:54.289  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:19:58.058  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:19:58.627  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:19:58.627  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:22:13.818  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/14', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[14, {}]}
+2020-09-24 01:22:14.378  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:22:14.378  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:22:48.177 ERROR 15536 --- [http-nio-8080-exec-10] c.m.b.h.ControllerExceptionHandler       : Request URL:http://127.0.0.1:8080/blog/catalog; Exception:{}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "catalog"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
@@ -66,14 +293,208 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.NumberFormatException: For input string: "catalog"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:na]
+	at java.base/java.lang.Long.parseLong(Long.java:692) ~[na:na]
+	at java.base/java.lang.Long.valueOf(Long.java:1144) ~[na:na]
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214) ~[spring-core-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 47 common frames omitted
 
-2020-09-21 18:42:20.363  WARN 12008 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2020-09-21 18:50:21.848  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.catalog', args=[]}
-2020-09-21 18:50:21.848  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :catalog
-2020-09-21 18:50:21.848  INFO 12008 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 18:54:12.693  INFO 12008 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
-2020-09-21 18:54:13.141  INFO 12008 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :home
-2020-09-21 18:54:13.142  INFO 12008 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
-2020-09-21 18:54:17.215  INFO 12008 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/15', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[15, {}]}
-2020-09-21 18:54:17.417  INFO 12008 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
-2020-09-21 18:54:17.417  INFO 12008 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:22:48.179  WARN 15536 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "catalog"]
+2020-09-24 01:22:52.937 ERROR 15536 --- [http-nio-8080-exec-8] c.m.b.h.ControllerExceptionHandler       : Request URL:http://127.0.0.1:8080/blog/tags; Exception:{}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "tags"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.NumberFormatException: For input string: "tags"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:na]
+	at java.base/java.lang.Long.parseLong(Long.java:692) ~[na:na]
+	at java.base/java.lang.Long.valueOf(Long.java:1144) ~[na:na]
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214) ~[spring-core-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 47 common frames omitted
+
+2020-09-24 01:22:52.938  WARN 15536 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "tags"]
+2020-09-24 01:22:55.304 ERROR 15536 --- [http-nio-8080-exec-1] c.m.b.h.ControllerExceptionHandler       : Request URL:http://127.0.0.1:8080/blog/tag; Exception:{}
+
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "tag"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:133) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.37.jar:9.0.37]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.NumberFormatException: For input string: "tag"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:na]
+	at java.base/java.lang.Long.parseLong(Long.java:692) ~[na:na]
+	at java.base/java.lang.Long.valueOf(Long.java:1144) ~[na:na]
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:214) ~[spring-core-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:429) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:402) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:155) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:73) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53) ~[spring-beans-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:693) ~[spring-context-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:125) ~[spring-web-5.2.8.RELEASE.jar:5.2.8.RELEASE]
+	... 47 common frames omitted
+
+2020-09-24 01:22:55.305  WARN 15536 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "tag"]
+2020-09-24 01:23:01.201  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/tag', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.tag', args=[]}
+2020-09-24 01:23:01.201  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :tag
+2020-09-24 01:23:01.201  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:28:13.816  INFO 15536 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:28:14.418  INFO 15536 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:28:14.418  INFO 15536 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:29:40.413  WARN 15536 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [768] milliseconds.
+2020-09-24 01:30:26.291  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:30:26.948  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:30:26.948  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:30:36.442  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:30:37.102  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:30:37.102  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:30:43.696  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:30:44.351  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:30:44.351  INFO 15536 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:57:40.080  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:57:40.831  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:57:40.831  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:58:38.760  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:58:39.439  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:58:39.439  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 01:59:14.303  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 01:59:15.004  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 01:59:15.004  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:01:15.166  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:01:15.807  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:01:15.808  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:02:36.365  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:02:37.002  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:02:37.002  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:02:48.464  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:02:49.097  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:02:49.099  INFO 15536 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:51:11.597  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:51:12.417  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:51:12.417  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:56:43.063  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:56:43.872  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:56:43.872  INFO 15536 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:56:53.225  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:56:54.029  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:56:54.029  INFO 15536 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 02:57:06.767  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 02:57:07.570  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 02:57:07.571  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 03:05:33.930  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 03:05:34.453  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 03:05:34.453  INFO 15536 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 03:06:04.138  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 03:06:04.650  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 03:06:04.651  INFO 15536 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-24 03:07:24.822  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/blog/19', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.blogInfo', args=[19, {}]}
+2020-09-24 03:07:25.594  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : Result :blogInfo
+2020-09-24 03:07:25.594  INFO 15536 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------

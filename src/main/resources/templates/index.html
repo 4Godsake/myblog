@@ -152,7 +152,7 @@
                 <i class="bookmark icon"></i>推荐
               </div>
               <div class="ui segment" th:each="blog : ${recommendBlogs}">
-                <a href="#" target="_blank" class="my-color-black">
+                <a href="#" target="_blank" class="my-color-black" th:href="@{/blog/{id}(id=${blog.id})}">
                   <i class="angle right teal icon"></i>
                 <span th:text="${blog.title}">博客标题样例</span>
                 </a>

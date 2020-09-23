@@ -17,5 +17,7 @@ public interface BlogService {
     List<blog> listRecommendBlogTop(Integer size);
     blog saveBlog(blog blog);
     blog updateBlog(Long id, blog blog);
+    String getContent(Long id);
+    void incViews(Long id);
     void deleteBlog(Long id);
 }
