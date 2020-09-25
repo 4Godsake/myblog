@@ -1,5 +1,6 @@
 package com.myblog.blog.controller;
 
+import com.myblog.blog.entity.comment;
 import com.myblog.blog.service.BlogService;
 import com.myblog.blog.service.CatalogService;
 import com.myblog.blog.service.CommentService;
@@ -56,20 +57,28 @@ public class IndexController {
     public String blogInfo(@PathVariable Long id, Model model){
         model.addAttribute("blog",blogService.getBlog(id));
         model.addAttribute("content",blogService.getContent(id));
-//        model.addAttribute("comments",commentService.listCommentByBlogId(id));
+        model.addAttribute("comments",commentService.listCommentByBlogId(id));
         blogService.incViews(id);
         System.out.println("--------blogInfo----------");
         return "blog";
     }
+
+//    @PostMapping("/blog/comment")
+//    public String postComment(comment comment){
+//        Long blogId = comment.getBlog().getId();
+//        comment.setBlog(blogService.getBlog(blogId));
+////        comment.setAvatar(avatar);
+//        commentService.saveComment(comment);
+//        return "blog :: commentList";
+//    }
+
     @GetMapping("/catalog")
     public String catalog(){
-
         System.out.println("--------catalog----------");
         return "catalog";
     }
     @GetMapping("/tag")
     public String tag(){
-
         System.out.println("--------tag----------");
         return "tag";
     }

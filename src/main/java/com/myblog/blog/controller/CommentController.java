@@ -19,23 +19,22 @@ public class CommentController {
     @Autowired
     private BlogService blogService;
 
-//    @Value("$(comment.avatar)")
-//    private String avatar;
+    @Value("$(comment.avatar)")
+    private String avatar;
 
     @GetMapping("/comments/{blogId}")
     public String comments(@PathVariable Long blogId ,Model model){
         model.addAttribute("comments",commentService.listCommentByBlogId(blogId));
         return "blog :: commentList";
-//      return "/blog/"+ blogId;
     }
 
     @PostMapping("/comments")
     public String postComment(comment comment){
         Long blogId = comment.getBlog().getId();
         comment.setBlog(blogService.getBlog(blogId));
-//        comment.setAvatar(avatar);
+        comment.setAvatar(avatar);
         commentService.saveComment(comment);
-        return "redirect:/comments/" + blogId;
+        return "redirect:/comments/"+blogId;
     }
 
 }
