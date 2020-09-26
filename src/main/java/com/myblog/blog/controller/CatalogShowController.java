@@ -2,6 +2,7 @@ package com.myblog.blog.controller;
 
 import com.myblog.blog.entity.blogQuery;
 import com.myblog.blog.entity.catalog;
+import com.myblog.blog.service.BlogService;
 import com.myblog.blog.service.CatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +20,8 @@ public class CatalogShowController {
 
     @Autowired
     private CatalogService catalogService;
+    @Autowired
+    private BlogService blogService;
 
     @GetMapping("/catalog/{id}")
     public String showCatalog(@PageableDefault(size = 8,sort = {"updateTime"},direction = Sort.Direction.DESC)
@@ -31,7 +34,7 @@ public class CatalogShowController {
         blogQuery blogQuery = new blogQuery();
         blogQuery.setCatalogId(id);
         model.addAttribute("catalogs", catalogs);
-        model.addAttribute("page",pageable);
+        model.addAttribute("page",blogService.searchBlog(pageable,blogQuery));
         model.addAttribute("activeId",id);
 
         return "catalog";

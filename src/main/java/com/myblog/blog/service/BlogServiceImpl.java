@@ -55,7 +55,7 @@ public class BlogServiceImpl implements BlogService{
                 if (blog.getCatalogId()!=null){
                     predicates.add(criteriaBuilder.equal(root.<catalog>get("catalog").get("id"),blog.getCatalogId()));
                 }
-                if(blog.getRecommend()){
+                if(blog.getRecommend()!=null && blog.getRecommend()){
                     predicates.add(criteriaBuilder.equal(root.<Boolean>get("recommend"),blog.getRecommend()));
                 }
                 criteriaQuery.where(predicates.toArray(new Predicate[predicates.size()]));
