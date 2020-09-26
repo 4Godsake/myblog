@@ -2154,3 +2154,99 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2020-09-27 01:53:25.967  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/16', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[16, Page request [number: 0, size 20, sort: UNSORTED], {}]}
 2020-09-27 01:53:26.176  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :catalog
 2020-09-27 01:53:26.176  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:55:50.357  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/1', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[1, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:55:50.515  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:55:50.515  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:55:51.999  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:55:52.159  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:55:52.159  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:57:51.323  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:57:51.540  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:57:51.540  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:58:07.338  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:58:07.546  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:58:07.547  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:58:42.022  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:58:42.229  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:58:42.229  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 01:59:59.041  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 01:59:59.217  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 01:59:59.217  INFO 21364 --- [http-nio-8080-exec-10] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:00:45.370  INFO 21364 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 02:00:45.543  INFO 21364 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 02:00:45.543  INFO 21364 --- [http-nio-8080-exec-6] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:02:22.637  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 02:02:22.812  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 02:02:22.812  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:03:02.564  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 02:03:02.781  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 02:03:02.781  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:03:13.127  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 02:03:13.345  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 02:03:13.345  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:03:35.130  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/catalog/2', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.CatalogShowController.showCatalog', args=[2, Page request [number: 0, size 20, sort: UNSORTED], {}]}
+2020-09-27 02:03:35.361  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :catalog
+2020-09-27 02:03:35.361  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:05:07.222  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 10, sort: updateTime: DESC], {}]}
+2020-09-27 02:05:07.605  WARN 21364 --- [http-nio-8080-exec-9] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-27 02:05:07.671  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:05:07.671  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:05:57.778  INFO 21364 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-27 02:05:57.783  INFO 21364 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-27 02:05:57.787  INFO 21364 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-27 02:05:57.856  INFO 21364 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-09-27 02:05:58.088  INFO 21364 --- [restartedMain] com.myblog.blog.BlogApplication          : Starting BlogApplication on 4Godsake with PID 21364 (E:\Javaweb\myblog\target\classes started by 1 in E:\Javaweb\myblog)
+2020-09-27 02:05:58.088 DEBUG 21364 --- [restartedMain] com.myblog.blog.BlogApplication          : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-27 02:05:58.089  INFO 21364 --- [restartedMain] com.myblog.blog.BlogApplication          : No active profile set, falling back to default profiles: default
+2020-09-27 02:05:58.646  INFO 21364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-27 02:05:58.789  INFO 21364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 142ms. Found 5 JPA repository interfaces.
+2020-09-27 02:05:59.053  INFO 21364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-27 02:05:59.054  INFO 21364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-27 02:05:59.054  INFO 21364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-27 02:05:59.129  INFO 21364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-27 02:05:59.129  INFO 21364 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1037 ms
+2020-09-27 02:05:59.222  INFO 21364 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-27 02:05:59.241  INFO 21364 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-27 02:05:59.251  WARN 21364 --- [task-1] com.zaxxer.hikari.HikariConfig           : HikariPool-2 - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-09-27 02:05:59.251  INFO 21364 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-09-27 02:05:59.347  WARN 21364 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-27 02:05:59.490  INFO 21364 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-09-27 02:05:59.490  INFO 21364 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-27 02:05:59.598  INFO 21364 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-27 02:05:59.975  INFO 21364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-27 02:06:00.001  INFO 21364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-27 02:06:00.002  INFO 21364 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-27 02:06:00.015  INFO 21364 --- [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-27 02:06:00.015  INFO 21364 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-27 02:06:00.390  INFO 21364 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-27 02:06:00.390  INFO 21364 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-27 02:06:00.582  INFO 21364 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 567 ms
+2020-09-27 02:06:00.593  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:00.594  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:00.979  INFO 21364 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-27 02:06:00.986  INFO 21364 --- [restartedMain] com.myblog.blog.BlogApplication          : Started BlogApplication in 2.983 seconds (JVM running for 1263.473)
+2020-09-27 02:06:00.988  INFO 21364 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-09-27 02:06:01.293  WARN 21364 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [c.blogs.size]; use collection function syntax instead [size(c.blogs)].
+2020-09-27 02:06:01.322  WARN 21364 --- [http-nio-8080-exec-4] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-27 02:06:01.375  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:01.375  INFO 21364 --- [http-nio-8080-exec-4] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:01.433  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:01.434  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:14.150  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 1, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:14.455  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:14.455  INFO 21364 --- [http-nio-8080-exec-5] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:17.804  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:18.198  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:18.198  INFO 21364 --- [http-nio-8080-exec-7] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:24.907  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 1, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:25.283  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:25.283  INFO 21364 --- [http-nio-8080-exec-1] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:28.242  INFO 21364 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:28.616  INFO 21364 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:28.617  INFO 21364 --- [http-nio-8080-exec-2] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:33.393  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 1, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:33.697  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:33.697  INFO 21364 --- [http-nio-8080-exec-9] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------
+2020-09-27 02:06:38.591  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doBefore--------{url='http://127.0.0.1:8080/', ip='127.0.0.1|127.0.0.1', classMethod='com.myblog.blog.controller.IndexController.index', args=[Page request [number: 0, size 3, sort: updateTime: DESC], {}]}
+2020-09-27 02:06:38.974  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : Result :home
+2020-09-27 02:06:38.975  INFO 21364 --- [http-nio-8080-exec-3] com.myblog.blog.aspect.LogAspect         : ---------doAfter----------

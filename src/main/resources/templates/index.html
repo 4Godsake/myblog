@@ -53,7 +53,7 @@
                 <div class="ui middle aligned stackable grid">
                   <div class="eleven wide column">
                     <h3 class="ui header"><a href="#" class="my-color-black" target="_blank" th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}">这是一篇样例博客1</a></h3>
-                    <p th:text="|${blog.synopsis}......|">Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
+                    <p style="min-height: 9em !important;" th:text="|${blog.synopsis}......|">Node.js 是一个基于 Chrome V8 引擎 的 JavaScript 运行环境。就像java的运行环境jdk，Node.js是JavaScript的运行环境，不需要浏览器，直接使用node.js运行JavaScript代码.Nodejs基于Javascript语言，不用再单独新学一门陌生的语言，从而减低了学习的门槛......</p>
                     <!-- 博客发布者以及时间 -->
                     <div class="ui bottom aligned grid">
                       <div class="eleven wide column">

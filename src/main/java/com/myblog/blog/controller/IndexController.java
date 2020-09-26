@@ -31,7 +31,7 @@ public class IndexController {
     private CommentService commentService;
 
     @GetMapping("/")
-    public String index(@PageableDefault(size = 10,sort = {"updateTime"},direction = Sort.Direction.DESC)
+    public String index(@PageableDefault(size = 3,sort = {"updateTime"},direction = Sort.Direction.DESC)
                                     Pageable pageable, Model model){
         model.addAttribute("page",blogService.listBlog(pageable));
         model.addAttribute("catalogs",catalogService.listCatalogTop(6));
