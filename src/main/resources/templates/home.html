@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <style type="text/css">
 
+
       body.pushable {
         background-image:url('../img/homebg.jpg') !important;
         background-size:100% !important;
@@ -15,9 +16,7 @@
       }
 
       .pusher{
-
         background: unset !important;
-
       }
 
       .hidden.menu {
@@ -137,11 +136,12 @@
         from { background-position: 0 0; }
         to { background-position: 30000% 0; }
       }
+
     </style>
 
 
-
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="//stdl.qq.com/stdl/qb/daohang/lib/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
   <script>
@@ -177,8 +177,8 @@
 <div class="ui large top fixed hidden secondary inverted menu my-opacity-85" style="background-color: #202020 !important;">
   <div class="ui container">
     <a class="item active"><i class="home icon"></i>首页</a>
-    <a class="item"><i class="idea icon "></i>分类</a>
-    <a class="item"><i class="tags icon"></i>标签</a>
+    <a class="item" th:href="@{/catalog}"><i class="idea icon "></i>分类</a>
+    <a class="item" th:href="@{/tag}"><i class="tags icon"></i>标签</a>
     <a class="item"><i class="book icon"></i>留言板</a>
     <a class="item"><i class="info icon"></i>关于我</a>
     <div class="right item">
@@ -193,10 +193,10 @@
 </div>
 
 <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
+<div class="ui vertical inverted sidebar menu overlay">
   <a class="item active"><i class="home icon"></i>首页</a>
-  <a class="item"><i class="idea icon "></i>分类</a>
-  <a class="item"><i class="tags icon"></i>标签</a>
+  <a class="item" th:href="@{/catalog}"><i class="idea icon "></i>分类</a>
+  <a class="item" th:href="@{/tag}"><i class="tags icon"></i>标签</a>
   <a class="item"><i class="book icon"></i>留言板</a>
   <a class="item"><i class="info icon"></i>关于我</a>
 </div>
@@ -227,7 +227,7 @@
     </div>
 
     <div class="ui text container">
-      <h1 class="ui teal header animate__animated animate__bounceInLeft">
+      <h1 class="ui teal header animate__animated animate__bounceInLeft my-font-logo" style="margin-top: 1em;">
         4Godsake’s Blog
       </h1>
       <h2>Do whatever you want when you want to.</h2>
@@ -235,12 +235,12 @@
   </div>
 
   <div class="ui center aligned stackable container">
-    <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+    <div class="ui huge teal button" onclick="start()">Get Started <i class="right arrow icon"></i></div>
   </div>
 </div>
 
 <!--内容-->
-    <div class="my-content-padding">
+    <div class="my-content-padding" id="content-container">
       <div class="ui container my-opacity-90">
         <div class="ui stackable grid">
           <!-- 左边板块 -->
@@ -412,4 +412,10 @@
     </footer>
 
 </body>
+    <script>
+      function start() {
+        $(window).scrollTo($('#content-container'),300);
+      }
+    </script>
+
 </html>

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="../static/myStyle.css" th:href="@{/myStyle.css}">
     <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <script src="//stdl.qq.com/stdl/qb/daohang/lib/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="../static/lib/prism/prism.js"  th:src="@{/lib/prism/prism.js}"></script>
 </head>
 <body>
 <!--导航栏-->
@@ -14,9 +18,9 @@
       <div class="ui inverted secondary stackable menu">
         <div class="ui inverted container">
           <h2 class="ui header item teal inverted animate__animated animate__bounceInLeft">RapDog</h2>
-          <a class="item"><i class="home icon"></i>首页</a>
-          <a class="item"><i class="idea icon "></i>分类</a>
-          <a class="item"><i class="tags icon"></i>标签</a>
+          <a class="item" th:href="@{/}"><i class="home icon"></i>首页</a>
+          <a class="item" th:href="@{/catalog}"><i class="idea icon "></i>分类</a>
+          <a class="item" th:href="@{/tag}"><i class="tags icon"></i>标签</a>
           <a class="item"><i class="book icon"></i>留言板</a>
           <a class="item"><i class="info icon"></i>关于我</a>
           <div class="ui right aligned item">
@@ -108,23 +112,48 @@
           </div>
         </div>
         <!-- 留言部分 -->
-        <div class="ui bottom attached padded secondary segment">
+        <div class="ui bottom attached padded secondary segment" th:if="${blog.comment}">
           <div class="ui comments" style="max-width: 100%;">
             <h3 class="ui teal dividing center aligned header">评论区</h3>
               <!-- 评论区 -->
               <div class="ui segment" id="comment-container" th:fragment="commentList">
                 <div class="comment" th:each="comment : ${comments}">
                   <a class="avatar">
-                    <img src="../static/img/avatar/avatar01.png">
+                    <img src="../static/img/avatar/avatar01.png" th:src="${comment.avatar}">
                   </a>
                   <div class="content">
-                    <a class="author" th:text="${comment.nickname}">Matt</a>
+                    <a class="author">
+                      <span th:text="${comment.nickname}">Matt</span>
+                      <div class="ui mini basic teal left pointing label my-padding-mini" th:if="${comment.adminComment}">博主</div>
+                    </a>
                     <div class="metadata">
                       <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">今天下午 5:42</span>
                     </div>
                     <div class="text" th:text="${comment.content}">太赞了！ </div>
                     <div class="actions">
                       <a class="reply" data-commentid="-1" data-commentnickname="Matt" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickname}" onclick="reply(this)">回复</a>
+                    </div>
+                  </div>
+                  <!--评论子集comments-->
+                  <div class="comments" th:if="${#arrays.length(comment.replyComments)>0}">
+                    <div class="comment" th:each="reply : ${comment.replyComments}">
+                      <a class="avatar">
+                        <img src="../static/img/avatar/avatar01.png" th:src="${reply.avatar}">
+                      </a>
+                      <div class="content">
+                        <a class="author">
+                          <span th:text="${reply.nickname}">Jenny Hess</span>
+                          <div class="ui mini basic teal left pointing label my-padding-mini" th:if="${reply.adminComment}">博主</div>
+                          &nbsp<span th:text="|@${reply.parentComment.nickname}|" style="color: #207cde !important;">@Matt</span>
+                        </a>
+                        <div class="metadata">
+                          <span class="date" th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">刚刚</span>
+                        </div>
+                        <div class="text" th:text="${reply.content}">艾略特你永远是多么正确 :) </div>
+                        <div class="actions">
+                          <a class="reply"  data-commentid="-1" data-commentnickname="Matt" th:attr="data-commentid=${reply.id},data-commentnickname=${reply.nickname}" onclick="reply(this)">回复</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -193,9 +222,6 @@
           </div>
     </footer>
 
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="../static/lib/prism/prism.js"  th:src="@{/lib/prism/prism.js}"></script>
     <script>
       $('#payButton').popup({
         popup : $('.payQR.popup'),
@@ -248,13 +274,12 @@
           "email" : $("[name='email']").val(),
           "content" : $("[name='content']").val(),
         },function(responseTxt,statusTxt,xhr){
-          $(window).scrollTo($('#comment-container'),500);
+          // $(window).scrollTo($('#comment-container'),500);
           clearContent();
         });
       }
 
       function clearContent(){
-        alert('清空中')
         $("[name='parentComment.id']").val(-1);
         $("[name='content']").val('')
         $("[name='content']").attr("placeholder", "请输入评论内容...");

@@ -1,8 +1,31 @@
 body{
-    background-image:url('../img/homebg.jpg') !important;
+    background-image:url(../img/homebg.jpg) !important;
     background-size:100%;
     background-attachment:fixed
 }
+
+@font-face {
+    font-family: MyFontNameKust;
+    src: url(../font/kust.ttf) ;
+}
+
+
+/*font*/
+.my-font-logo{
+    font-family: MyFontNameKust !important;
+    font-size: 10em !important;
+    line-height: 1em !important;
+    user-seletct: none !important;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+
 .my-container-width{
     width: 85% !important;
 }
@@ -77,6 +100,9 @@ body{
     display: inline-block !important;
 }
 /* padding */
+.my-padding-mini{
+    padding: 0.3em !important;
+}
 .my-padding-1em{
     padding: 1em !important;
 }

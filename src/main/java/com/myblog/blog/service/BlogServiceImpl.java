@@ -108,12 +108,7 @@ public class BlogServiceImpl implements BlogService{
     /* 增加浏览次数 */
     @Override
     public void incViews(Long id) {
-        blog blog = blogRepository.findById(id).get();
-        Integer view = blog.getViews()+1;
-        blog blog1 = blogRepository.findById(id).get();
-        BeanUtils.copyProperties(blog,blog1, MyBeanUtils.getNullPropertyNames(blog));
-        blog1.setViews(view);
-        blogRepository.save(blog1);
+        blogRepository.updateViews(id);
     }
 
     @Transactional

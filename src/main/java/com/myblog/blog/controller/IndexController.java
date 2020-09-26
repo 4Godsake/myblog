@@ -63,20 +63,6 @@ public class IndexController {
         return "blog";
     }
 
-//    @PostMapping("/blog/comment")
-//    public String postComment(comment comment){
-//        Long blogId = comment.getBlog().getId();
-//        comment.setBlog(blogService.getBlog(blogId));
-////        comment.setAvatar(avatar);
-//        commentService.saveComment(comment);
-//        return "blog :: commentList";
-//    }
-
-    @GetMapping("/catalog")
-    public String catalog(){
-        System.out.println("--------catalog----------");
-        return "catalog";
-    }
     @GetMapping("/tag")
     public String tag(){
         System.out.println("--------tag----------");
