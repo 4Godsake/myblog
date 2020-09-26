@@ -14,6 +14,8 @@ public interface BlogService {
     Page<blog> listBlog(Pageable pageable);
     Page<blog> searchBlog(String query, Pageable pageable);
     Page<blog> searchBlog(Pageable pageable, blogQuery blog);
+    Page<blog> searchBlog(Pageable pageable, Long tagId);
+
     List<blog> listRecommendBlogTop(Integer size);
     blog saveBlog(blog blog);
     blog updateBlog(Long id, blog blog);

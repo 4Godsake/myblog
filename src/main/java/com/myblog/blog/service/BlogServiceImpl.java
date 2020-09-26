@@ -16,10 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -60,6 +57,17 @@ public class BlogServiceImpl implements BlogService{
                 }
                 criteriaQuery.where(predicates.toArray(new Predicate[predicates.size()]));
                 return null;
+            }
+        },pageable);
+    }
+
+    @Override
+    public Page<blog> searchBlog(Pageable pageable, Long tagId) {
+        return blogRepository.findAll(new Specification<blog>() {
+            @Override
+            public Predicate toPredicate(Root<blog> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                Join join = root.join("tags");
+                return criteriaBuilder.equal(join.get("id"),tagId);
             }
         },pageable);
     }

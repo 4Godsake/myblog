@@ -63,11 +63,6 @@ public class IndexController {
         return "blog";
     }
 
-    @GetMapping("/tag")
-    public String tag(){
-        System.out.println("--------tag----------");
-        return "tag";
-    }
 }
 
 

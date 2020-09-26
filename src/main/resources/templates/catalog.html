@@ -32,7 +32,17 @@
     <div class="my-content-padding">
       <div class="ui container my-opacity-90">
         <!-- 分类栏 -->
-        <div class="ui stackable segment my-padding-tb-2em">
+        <div class="ui top attached segment">
+          <div class="ui middle aligned two column grid">
+            <div class="column">
+              <h3 class="ui teal header">分类</h3>
+            </div>
+            <div class="column right aligned">
+              共<h3 class="ui orange header my-inlineblock" th:text="${#arrays.length(catalogs)}">14</h3>个分类
+            </div>
+          </div>
+        </div>
+        <div class="ui stackable bottom attached segment my-padding-tb-2em">
           <div class="ui labeled button" th:each="catalog : ${catalogs}">
             <a href="" class="ui basic button" th:text="${catalog.name}" th:href="@{/catalog/{id}(id=${catalog.id})}" th:classappend="${catalog.id==activeId} ? 'teal'">测试分类</a>
             <div class="ui basic left pointing label" th:text="${#arrays.length(catalog.blogs)}" th:classappend="${catalog.id==activeId} ? 'teal'">14</div>
